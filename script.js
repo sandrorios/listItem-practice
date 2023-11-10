@@ -3,7 +3,7 @@ let listItem = document.getElementById('list-item');
 let inputField = document.getElementById('input-field');
 let btn = document.querySelector('btn');
 let filter = document.getElementById('filter');
-let clearBtn = document.getElementById('clear');
+let clearBtn = document.getElementById('filter');
 
 function addItem(e){
     e.preventDefault();
@@ -20,7 +20,7 @@ function addItem(e){
     inputField.value = '';
     inputField.focus();
 
-    CheckUI();
+    checkUI();
 }
 
 function createButton(classes){
@@ -41,26 +41,30 @@ function removeItem(e){
     if(e.target.parentElement.classList.contains('remove-item')){
         e.target.parentElement.parentElement.remove();
     }
+    checkUI();
 }
 
 function clearItems() {
     while(listItem.firstChild){
         listItem.firstChild.remove(listItem.firstChild);
     }
+    checkUI()
 }
 
-function CheckUI(){
+function checkUI(){
     let items = listItem.querySelectorAll('li');
     if(items.length === 0){
         listItem.style.display = 'none';
-        filter.style.display = 'none'
+        // filter.style.display = 'none';
+        clearBtn.style.display = 'none';
     }else{
         listItem.style.display = 'block';
+        // filter.style.display = 'block';
         filter.style.display = 'block';
     }
 }
 
-clearBtn.addEventListener('click', clearItems);
+clearBtn.addEventListener('input', clearItems);
 listItem.addEventListener('click', removeItem);
 formItem.addEventListener('submit', addItem);
-CheckUI();
+checkUI();
