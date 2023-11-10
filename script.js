@@ -20,6 +20,7 @@ function addItem(e){
     inputField.value = '';
     inputField.focus();
 
+    CheckUI();
 }
 
 function createButton(classes){
@@ -36,4 +37,16 @@ function createIcon(classes){
     return icon;
 }
 
+function CheckUI(){
+    let items = listItem.querySelectorAll('li');
+    if(items.length === 0){
+        listItem.style.display = 'none';
+        filter.style.display = 'none'
+    }else{
+        listItem.style.display = 'block';
+        filter.style.display = 'block';
+    }
+}
+
+CheckUI();
 formItem.addEventListener('submit', addItem);
