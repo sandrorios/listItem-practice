@@ -37,6 +37,12 @@ function createIcon(classes){
     return icon;
 }
 
+function removeItem(e){
+    if(e.target.parentElement.classList.contains('remove-item')){
+        e.target.parentElement.parentElement.remove();
+    }
+}
+
 function CheckUI(){
     let items = listItem.querySelectorAll('li');
     if(items.length === 0){
@@ -48,5 +54,6 @@ function CheckUI(){
     }
 }
 
-CheckUI();
+listItem.addEventListener('click', removeItem);
 formItem.addEventListener('submit', addItem);
+CheckUI();
