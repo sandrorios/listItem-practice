@@ -21,9 +21,9 @@ function onAddItemSubmit(e){
     checkUI();
 }
 
-function addItemToDom(){
+function addItemToDom(item){
     let li = document.createElement('li');
-    li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(item));
     listItem.appendChild(li);
     let button = createButton('remove-item text-red')
     li.appendChild(button);
@@ -92,5 +92,5 @@ function checkUI(){
 clearBtn.addEventListener('click', clearItems);
 filter.addEventListener('input', filterItem)
 listItem.addEventListener('click', removeItem);
-formItem.addEventListener('submit', addItem);
+formItem.addEventListener('submit', onAddItemSubmit);
 checkUI();
