@@ -27,9 +27,6 @@ function addItemToDom(item){
     listItem.appendChild(li);
     let button = createButton('remove-item text-red')
     li.appendChild(button);
-
-    checkUI();
-    
 }
 
 function createButton(classes){
