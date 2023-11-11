@@ -76,11 +76,11 @@ function checkUI(){
     }else{
         filter.style.display = 'block';
         // filter.style.display = 'block';
-        filter.style.display = 'block';
+        clearBtn.style.display = 'block';
     }
 }
 
-clearBtn.addEventListener('input', clearItems);
+clearBtn.addEventListener('click', clearItems);
 filter.addEventListener('input', filterItem)
 listItem.addEventListener('click', removeItem);
 formItem.addEventListener('submit', addItem);
