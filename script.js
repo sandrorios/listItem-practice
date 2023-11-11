@@ -51,20 +51,37 @@ function clearItems() {
     checkUI()
 }
 
+function filterItem(e) {
+    let items = listItem.querySelectorAll('li');
+    let text = e.target.value.toLowerCase();
+
+    items.forEach((items) =>{
+        let itemName = items.firstChild.textContent.toLowerCase();
+        if(itemName.indexOf(text)!= -1) {
+            items.style.display = 'flex';
+        }else{
+            items.style.display = 'none'
+        }
+    })
+    checkUI();
+}
+
+
 function checkUI(){
     let items = listItem.querySelectorAll('li');
     if(items.length === 0){
-        listItem.style.display = 'none';
+        filter.style.display = 'none';
         // filter.style.display = 'none';
         clearBtn.style.display = 'none';
     }else{
-        listItem.style.display = 'block';
+        filter.style.display = 'block';
         // filter.style.display = 'block';
         filter.style.display = 'block';
     }
 }
 
 clearBtn.addEventListener('input', clearItems);
+filter.addEventListener('input', filterItem)
 listItem.addEventListener('click', removeItem);
 formItem.addEventListener('submit', addItem);
 checkUI();
