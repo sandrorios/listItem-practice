@@ -79,9 +79,6 @@ header h1 {
 .items{
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    cursor: pointer;
-    
 }
 
 .items li {
@@ -99,4 +96,8 @@ header h1 {
 
 .text-red {
     color: red;
+}
+
+.fa-xmark {
+    cursor: pointer;
 }
