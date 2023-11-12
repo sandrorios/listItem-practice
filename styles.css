@@ -60,6 +60,7 @@ header h1 {
     border: none;
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
+    background-color: transparent;
     outline: none;
 
 }
