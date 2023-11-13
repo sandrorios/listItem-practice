@@ -96,6 +96,13 @@ header h1 {
     font-weight: 700;
 }
 
+.remove-item {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 2px 3px;
+    border-radius: 5px;
+}
+
 .text-red {
     color: red;
 }
