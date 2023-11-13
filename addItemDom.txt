@@ -1,0 +1,21 @@
+
+
+
+
+function onAddItemSubmit(e){
+    e.preventDefault();
+    let newItem = inputField.value;
+    if(newItem === ''){
+        alert("please add item");
+        return;
+    }
+
+    addItemDom(newItem);
+
+    inputField.value = '';
+    inputField.focus();
+
+    checkUI();
+}
+
+formItem.addEventListener('submit', onAddItemSubmit);
